@@ -16,7 +16,7 @@ namespace Stone.IntegrationTest.Helpers
         public static IHttpConnector GetClientConnector()
         {
             IHttpConnector connector = new HttpConnector();
-            connector.SetAddress("http://localhost:51095/api/charge");
+            connector.SetAddress("http://localhost:51095/api/client");
 
             return connector;
         }

@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Stone.IntegrationTest.Tests
 {
-    public class RatingsTest
+    public class RatingTest
     {
         [Fact]
         public void Test1()

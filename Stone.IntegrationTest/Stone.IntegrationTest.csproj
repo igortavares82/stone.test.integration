@@ -19,6 +19,9 @@
     <Reference Include="Stone.Charging.Messages">
       <HintPath>..\References\Stone.Charging.Messages.dll</HintPath>
     </Reference>
+    <Reference Include="Stone.Clients.Messages">
+      <HintPath>..\References\Stone.Clients.Messages.dll</HintPath>
+    </Reference>
     <Reference Include="Stone.Framework.Http">
       <HintPath>..\References\Stone.Framework.Http.dll</HintPath>
     </Reference>

@@ -38,7 +38,6 @@ namespace Stone.IntegrationTest.Tests
 
             // Assert
             Assert.False(result.Data);
-            Assert.Single(result.Messages);
             Assert.Contains("cpf", result.Messages[0].ToLower());
         }
 
