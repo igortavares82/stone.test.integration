@@ -15,3 +15,4 @@ Stone.IntegrationTest/obj/Debug/netcoreapp2.1/Stone.IntegrationTest.csproj.CopyC
 Stone.IntegrationTest/bin/Debug/netcoreapp2.1/Stone.IntegrationTest.runtimeconfig.json
 Stone.IntegrationTest/bin/Debug/netcoreapp2.1/Stone.IntegrationTest.runtimeconfig.dev.json
 Stone.IntegrationTest/bin/Debug/netcoreapp2.1/Stone.IntegrationTest.deps.json
+.vs/Stone.IntegrationTest/DesignTimeBuild/.dtbcache
