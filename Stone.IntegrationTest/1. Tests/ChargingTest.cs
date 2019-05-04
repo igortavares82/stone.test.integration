@@ -5,6 +5,7 @@ using Stone.IntegrationTest.DataProviders;
 using Stone.IntegrationTest.Helpers;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -34,10 +35,10 @@ namespace Stone.IntegrationTest.Tests
             IHttpConnector connector = HttpConnectorHelper.GetChargeConnector();
 
             // Act
-            IApplicationResult<bool> result = await connector.PostAsync<ChargeMessage, bool>(string.Empty, charge);
+            IApplicationResult<bool?> result = await connector.PostAsync<ChargeMessage, bool?>(string.Empty, charge);
 
             // Assert
-            Assert.False(result.Data);
+            Assert.Equal(HttpStatusCode.BadRequest, result.StatusCode);
             Assert.Contains("cpf", result.Messages[0].ToLower());
         }
 
@@ -49,11 +50,10 @@ namespace Stone.IntegrationTest.Tests
             IHttpConnector connector = HttpConnectorHelper.GetChargeConnector();
 
             // Act
-            IApplicationResult<bool> result = await connector.PostAsync<ChargeMessage, bool>(string.Empty, charge);
+            IApplicationResult<bool?> result = await connector.PostAsync<ChargeMessage, bool?>(string.Empty, charge);
 
             // Assert
-            Assert.False(result.Data);
-            Assert.Single(result.Messages);
+            Assert.Equal(HttpStatusCode.BadRequest, result.StatusCode);
             Assert.Contains("maturity", result.Messages[0].ToLower());
         }
 
@@ -65,11 +65,10 @@ namespace Stone.IntegrationTest.Tests
             IHttpConnector connector = HttpConnectorHelper.GetChargeConnector();
 
             // Act
-            IApplicationResult<bool> result = await connector.PostAsync<ChargeMessage, bool>(string.Empty, charge);
+            IApplicationResult<bool?> result = await connector.PostAsync<ChargeMessage, bool?>(string.Empty, charge);
 
             // Assert
-            Assert.False(result.Data);
-            Assert.Single(result.Messages);
+            Assert.Equal(HttpStatusCode.BadRequest, result.StatusCode);
             Assert.Contains("value", result.Messages[0].ToLower());
         }
 
@@ -82,10 +81,10 @@ namespace Stone.IntegrationTest.Tests
             string query = $"?cpf={search.Cpf}&referenceMonth={search.ReferenceMonth}";
 
             // Act
-            IApplicationResult<bool> result = await connector.GetAsync<bool>(query);
+            IApplicationResult<List<ChargeMessage>> result = await connector.GetAsync<List<ChargeMessage>>(query);
 
             // Assert
-            Assert.False(result.Data);
+            Assert.Equal(HttpStatusCode.BadRequest, result.StatusCode);
         }
 
         [Theory]

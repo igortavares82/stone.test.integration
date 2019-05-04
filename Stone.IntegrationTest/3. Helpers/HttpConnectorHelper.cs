@@ -20,5 +20,13 @@ namespace Stone.IntegrationTest.Helpers
 
             return connector;
         }
+
+        public static IHttpConnector GetRateConnector()
+        {
+            IHttpConnector connector = new HttpConnector();
+            connector.SetAddress("http://localhost:50820/api/rate");
+
+            return connector;
+        }
     }
 }

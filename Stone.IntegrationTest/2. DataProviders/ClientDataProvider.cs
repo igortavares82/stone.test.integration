@@ -19,6 +19,11 @@ namespace Stone.IntegrationTest.DataProviders
             new ClientMessage() { Cpf = CpfGenerator.Generate(), Name = Guid.NewGuid().ToString(), State = "XX" },
         };
 
+        public static IEnumerable<object[]> GetValidClients()
+        {
+            yield return new object[] { clients.GetRange(0,3) };
+        }
+
         public static IEnumerable<object[]> GetValidClient()
         {
             yield return new object[] { clients.First() };

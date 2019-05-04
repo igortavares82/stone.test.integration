@@ -34,6 +34,9 @@
     <Reference Include="Stone.Framework.Validator">
       <HintPath>..\References\Stone.Framework.Validator.dll</HintPath>
     </Reference>
+    <Reference Include="Stone.Rate.Messages">
+      <HintPath>..\References\Stone.Rate.Messages.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
